@@ -12,14 +12,17 @@ struct ContentView: View {
     @State private var numberOfPeople: Int = 2
     @State private var tipPercentage: Int = 20
     @FocusState private var amountIsFocused: Bool
+    let currencyFormatter: FloatingPointFormatStyle<Double>.Currency = .currency(code: Locale.current.currency?.identifier ?? "USD")
     let tipPercentages: [Int] = [10, 15, 20, 25, 0]
     
     var totalPerPerson: Double {
         let peopleCount = Double(numberOfPeople + 2)
-        let tipSelection = Double(tipPercentage)
-        let tipValue = checkAmount / 100 * tipSelection
-        let grandTotal = checkAmount + tipValue
+        let grandTotal = calculateGrandTotal()
         return grandTotal / peopleCount
+    }
+    
+    var grandTotal: Double {
+        calculateGrandTotal()
     }
     
     var body: some View {
@@ -52,7 +55,15 @@ struct ContentView: View {
                 }
                 
                 Section {
-                    Text(totalPerPerson, format: .currency(code: Locale.current.currency?.identifier ?? "USD"))
+                    Text(totalPerPerson, format: currencyFormatter)
+                } header: {
+                    Text("Amount per person")
+                }
+                
+                Section {
+                    Text(grandTotal, format: currencyFormatter)
+                } header: {
+                    Text("Total with tips")
                 }
             }
             .navigationTitle("WeSplit")
@@ -66,6 +77,12 @@ struct ContentView: View {
                 }
             }
         }
+    }
+    
+    func calculateGrandTotal() -> Double{
+        let tipSelection = Double(tipPercentage)
+        let tipValue = checkAmount / 100 * tipSelection
+        return checkAmount + tipValue
     }
 }
 
