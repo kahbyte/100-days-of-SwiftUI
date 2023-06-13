@@ -15,26 +15,51 @@ struct ContentView: View {
     
     var body: some View {
         ZStack {
-            Color.blue
+            backgroundGradient
                 .ignoresSafeArea()
-            VStack(spacing: 30) {
-                VStack {
-                    Text("Tap the flag of")
-                        .foregroundColor(.white)
-                    
-                    Text(countries[correctAnswer])
-                        .foregroundColor(.white)
-                }
+            
+            VStack {
+                Spacer()
                 
-                ForEach(0..<3) { number in
-                    Button {
-                        flagTapped(number)
-                    } label: {
-                        Image(countries[number])
-                            .renderingMode(.original)
+                Text("Guess the Flag")
+                    .font(.largeTitle.weight(.bold))
+                    .foregroundColor(.white)
+                
+                Spacer()
+                Spacer()
+                Text("Score: ???")
+                    .foregroundColor(.white)
+                    .font(.title.bold())
+                Spacer()
+                    
+                VStack(spacing: 15) {
+                    VStack {
+                        Text("Tap the flag of")
+                            .font(.subheadline.weight(.heavy))
+                            .foregroundStyle(.secondary)
+                        
+                        Text(countries[correctAnswer])
+                            .font(.largeTitle.weight(.semibold))
+                    }
+                    
+                    ForEach(0..<3) { number in
+                        Button {
+                            flagTapped(number)
+                        } label: {
+                            Image(countries[number])
+                                .renderingMode(.original)
+                                .clipShape(RoundedRectangle(cornerRadius: 10))
+                                .shadow(radius: 5)
+                        }
                     }
                 }
+                .frame(maxWidth: .infinity)
+                .padding(.vertical, 20)
+                .background(.regularMaterial)
+                .clipShape(RoundedRectangle(cornerRadius: 20))
             }
+            .padding()
+            
         }
         .alert(scoreTitle, isPresented: $showingScore) {
             Button("Continue") {
@@ -44,6 +69,11 @@ struct ContentView: View {
             Text("Your score is ???")
         }
     }
+    
+    var backgroundGradient: RadialGradient = .init(stops: [
+        .init(color: Color(red: 0.1, green: 0.2, blue: 0.45), location: 0.3),
+        .init(color: Color(red: 0.76, green: 0.15, blue: 0.26), location: 0.3),
+    ], center: .top, startRadius: 200, endRadius: 400)
     
     private func flagTapped(_ number: Int) {
         if number == correctAnswer {
