@@ -17,6 +17,8 @@ struct ContentView: View {
     @State private var alertMessage: String = ""
     @State private var showingAlert: Bool = false
     
+    @State private var bedTime: String = ""
+    
     private var components = DateComponents()
     
     private static var defaultWakeTime: Date {
@@ -31,7 +33,7 @@ struct ContentView: View {
         
         NavigationView {
             Form {
-                VStack(alignment: .leading, spacing: 0) {
+                Section {
                     Text("When do you want to wake up?")
                         .font(.headline)
                     
@@ -39,7 +41,7 @@ struct ContentView: View {
                         .labelsHidden()
                 }
                 
-                VStack(alignment: .leading, spacing: 0) {
+                Section {
                     Text("Desired amount of sleep")
                         .font(.headline)
                     
@@ -51,30 +53,30 @@ struct ContentView: View {
                     )
                 }
                 
-                VStack(alignment: .leading, spacing: 0) {
+                Section {
                     Text("Daily coffee intake")
                         .font(.headline)
                     
-                    Stepper(
-                        coffeeAmount == 1 ? "1 cup" : "\(coffeeAmount) cups" ,
-                        value: $coffeeAmount,
-                        in: 1...20
-                    )
+                    Picker("Cups", selection: $coffeeAmount) {
+                        ForEach(0..<20) { amount in
+                            Text(amount == 1 ? "1 cup" : "\(amount) cups")
+                        }
+                    }
+                    
+                    Text(bedTime)
                 }
             }
             .navigationTitle("BetterRest")
-            .toolbar {
-                Button("Calculate", action: calculateBedtime)
-            }
             .alert(alertTitle, isPresented: $showingAlert) {
                 Button("OK") {}
             } message: {
                 Text(alertMessage   )
             }
+
         }
     }
     
-    func calculateBedtime() {
+    func calculateBedtime() -> String {
         do {
             let config = MLModelConfiguration()
             let model = try SleepCalculator(configuration: config)
@@ -92,13 +94,15 @@ struct ContentView: View {
             let sleeptime = wakeUp - prediction.actualSleep
             alertMessage = "\(sleeptime.formatted(date: .omitted, time: .shortened))"
             alertTitle = "Your ideal bedtime is"
+            return "\(sleeptime.formatted(date: .omitted, time: .shortened))"
         }
         catch {
             alertTitle = "Error"
             alertMessage = "Sorry, there was a problem calculating your bedtime"
+            return "Error"
         }
 
-        showingAlert = true
+//        showingAlert = true
     }
     
     private struct ContentViewConstants {
