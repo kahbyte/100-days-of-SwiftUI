@@ -14,6 +14,7 @@
 		583D27F62ADD575900B5A4A5 /* DrawingTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583D27F52ADD575900B5A4A5 /* DrawingTests.swift */; };
 		583D28002ADD575900B5A4A5 /* DrawingUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583D27FF2ADD575900B5A4A5 /* DrawingUITests.swift */; };
 		583D28022ADD575900B5A4A5 /* DrawingUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583D28012ADD575900B5A4A5 /* DrawingUITestsLaunchTests.swift */; };
+		583D280F2ADD5D0200B5A4A5 /* Triangle.swift in Sources */ = {isa = PBXBuildFile; fileRef = 583D280E2ADD5D0200B5A4A5 /* Triangle.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		583D27FB2ADD575900B5A4A5 /* DrawingUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = DrawingUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		583D27FF2ADD575900B5A4A5 /* DrawingUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingUITests.swift; sourceTree = "<group>"; };
 		583D28012ADD575900B5A4A5 /* DrawingUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DrawingUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		583D280E2ADD5D0200B5A4A5 /* Triangle.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Triangle.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				583D27E42ADD575700B5A4A5 /* DrawingApp.swift */,
 				583D27E62ADD575700B5A4A5 /* ContentView.swift */,
+				583D280E2ADD5D0200B5A4A5 /* Triangle.swift */,
 				583D27E82ADD575900B5A4A5 /* Assets.xcassets */,
 				583D27EA2ADD575900B5A4A5 /* Preview Content */,
 			);
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				583D280F2ADD5D0200B5A4A5 /* Triangle.swift in Sources */,
 				583D27E72ADD575700B5A4A5 /* ContentView.swift in Sources */,
 				583D27E52ADD575700B5A4A5 /* DrawingApp.swift in Sources */,
 			);
