@@ -43,17 +43,11 @@ struct MissionView: View {
                             .font(.title.bold())
                             .padding(.bottom, 5)
                         
-                        Rectangle()
-                            .frame(height: 2)
-                            .foregroundColor(.lightBackground)
-                            .padding(.vertical)
+                        SeparatorView()
                         
                         Text(mission.description)
                         
-                        Rectangle()
-                            .frame(height: 2)
-                            .foregroundColor(.lightBackground)
-                            .padding(.vertical)
+                        SeparatorView()
                         
                         Text("Crew")
                             .font(.title.bold())
@@ -68,25 +62,7 @@ struct MissionView: View {
                                 NavigationLink {
                                     AstronautView(astronaut: crewMember.astronaut)
                                 } label: {
-                                    HStack {
-                                        Image(crewMember.astronaut.id)
-                                            .resizable()
-                                            .frame(width: 104, height: 72)
-                                            .clipShape(RoundedRectangle(cornerRadius: 10))
-                                            .overlay (
-                                                RoundedRectangle(cornerRadius: 10)
-                                                    .strokeBorder(.white, lineWidth: 1)
-                                            )
-                                        
-                                        VStack(alignment: .leading) {
-                                            Text(crewMember.astronaut.name)
-                                                .foregroundColor(.white)
-                                                .font(.headline)
-                                            Text(crewMember.role)
-                                                .foregroundColor(.secondary)
-                                        }
-                                    }
-                                    .padding(.horizontal)
+                                    AstronautItem(crewMember: crewMember)
                                 }
                             }
                         }
