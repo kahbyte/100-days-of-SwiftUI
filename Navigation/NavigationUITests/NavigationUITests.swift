@@ -1,13 +1,13 @@
 //
-//  DrawingUITests.swift
-//  DrawingUITests
+//  NavigationUITests.swift
+//  NavigationUITests
 //
-//  Created by Kaue Sousa on 16/10/23.
+//  Created by Kaue Sousa on 09/11/23.
 //
 
 import XCTest
 
-final class DrawingUITests: XCTestCase {
+final class NavigationUITests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

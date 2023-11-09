@@ -1,14 +1,14 @@
 //
-//  DrawingTests.swift
-//  DrawingTests
+//  NavigationTests.swift
+//  NavigationTests
 //
-//  Created by Kaue Sousa on 16/10/23.
+//  Created by Kaue Sousa on 09/11/23.
 //
 
 import XCTest
-@testable import Drawing
+@testable import Navigation
 
-final class DrawingTests: XCTestCase {
+final class NavigationTests: XCTestCase {
 
     override func setUpWithError() throws {
         // Put setup code here. This method is called before the invocation of each test method in the class.

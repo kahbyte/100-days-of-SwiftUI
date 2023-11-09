@@ -1,14 +1,14 @@
 //
-//  DrawingApp.swift
-//  Drawing
+//  NavigationApp.swift
+//  Navigation
 //
-//  Created by Kaue Sousa on 16/10/23.
+//  Created by Kaue Sousa on 09/11/23.
 //
 
 import SwiftUI
 
 @main
-struct DrawingApp: App {
+struct NavigationApp: App {
     var body: some Scene {
         WindowGroup {
             ContentView()

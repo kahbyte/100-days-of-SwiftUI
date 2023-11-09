@@ -1,13 +1,13 @@
 //
-//  DrawingUITestsLaunchTests.swift
-//  DrawingUITests
+//  NavigationUITestsLaunchTests.swift
+//  NavigationUITests
 //
-//  Created by Kaue Sousa on 16/10/23.
+//  Created by Kaue Sousa on 09/11/23.
 //
 
 import XCTest
 
-final class DrawingUITestsLaunchTests: XCTestCase {
+final class NavigationUITestsLaunchTests: XCTestCase {
 
     override class var runsForEachTargetApplicationUIConfiguration: Bool {
         true
