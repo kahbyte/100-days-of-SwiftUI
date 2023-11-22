@@ -14,6 +14,7 @@
 		580C29FF2AFD0AB5009D221F /* NavigationTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580C29FE2AFD0AB5009D221F /* NavigationTests.swift */; };
 		580C2A092AFD0AB5009D221F /* NavigationUITests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580C2A082AFD0AB5009D221F /* NavigationUITests.swift */; };
 		580C2A0B2AFD0AB5009D221F /* NavigationUITestsLaunchTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 580C2A0A2AFD0AB5009D221F /* NavigationUITestsLaunchTests.swift */; };
+		582B9AFD2B0E7F31003654F9 /* PathStore.swift in Sources */ = {isa = PBXBuildFile; fileRef = 582B9AFC2B0E7F31003654F9 /* PathStore.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -44,6 +45,7 @@
 		580C2A042AFD0AB5009D221F /* NavigationUITests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = NavigationUITests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		580C2A082AFD0AB5009D221F /* NavigationUITests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUITests.swift; sourceTree = "<group>"; };
 		580C2A0A2AFD0AB5009D221F /* NavigationUITestsLaunchTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NavigationUITestsLaunchTests.swift; sourceTree = "<group>"; };
+		582B9AFC2B0E7F31003654F9 /* PathStore.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = PathStore.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -96,6 +98,7 @@
 			children = (
 				580C29ED2AFD0AB4009D221F /* NavigationApp.swift */,
 				580C29EF2AFD0AB4009D221F /* ContentView.swift */,
+				582B9AFC2B0E7F31003654F9 /* PathStore.swift */,
 				580C29F12AFD0AB5009D221F /* Assets.xcassets */,
 				580C29F32AFD0AB5009D221F /* Preview Content */,
 			);
@@ -257,6 +260,7 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				582B9AFD2B0E7F31003654F9 /* PathStore.swift in Sources */,
 				580C29F02AFD0AB4009D221F /* ContentView.swift in Sources */,
 				580C29EE2AFD0AB4009D221F /* NavigationApp.swift in Sources */,
 			);
